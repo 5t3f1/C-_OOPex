@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace employees
 {
-    class Admin : Manager
+    class Admin : Manager, Tech //тук не съм много сигурна как да го направя
     {
 
         public Manager CreateManager(Employee emp, List<Employee> empls)
@@ -26,13 +26,35 @@ namespace employees
             m.PrintManager();
             return m;
         }
-        public Tech CreateTech()
+        public Tech CreateTech(Employee emp, Manager m, List<Course> c)
         {
             Tech t = new Tech();
 
+            t.Name = emp.Name;
+            t.Surname = emp.Surname;
+            t.LastName = emp.LastName;
+            t.BirthDate = emp.BirthDate;
+            t.Gender = emp.Gender;
+            t.Egn = emp.Egn;
+            t.Email = emp.Email;
+            t.AppointmentDate = emp.AppointmentDate;
+            t.City = emp.City;
+            t.Country = emp.Country;
+            t.manager = m;
+            t.courses = c;
+
+            t.PrintTech();
+            return t;
 
 
             return t;
+        }
+
+        public override void SetWork()
+        {
+            WorkHours = 12;
+            WorkDays = 10;
+            //salary = salary * workHours * workDays;
         }
     }
 }

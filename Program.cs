@@ -27,6 +27,9 @@ namespace employees
             emp1.City = "Sofia";
             emp1.Country = "Bulgaria";
 
+            emp1.SetWork();
+            emp1.Salary = emp1.GetSalary();
+
             emp1.PrintEmpInfo();
 
             Employee emp2 = new Employee();
@@ -40,6 +43,9 @@ namespace employees
             emp2.AppointmentDate = 2018;
             emp2.City = "Sofia";
             emp2.Country = "Bulgaria";
+
+            emp2.SetWork();
+            emp2.GetSalary();
 
             emp2.PrintEmpInfo();
 
@@ -58,6 +64,9 @@ namespace employees
             emp3.City = "Sofia";
             emp3.Country = "Bulgaria";
 
+            emp3.SetWork();
+            emp3.GetSalary();
+
             Manager m1 = new Manager();
             m1.Employees = empls;
             m1.Pin = "2281";
@@ -72,6 +81,8 @@ namespace employees
             m1.City = "Sofia";
             m1.Country = "Bulgaria";
 
+            m1.SetWork();
+            m1.GetSalary();
 
             //m1.PrintEmpInfo();
             m1.PrintManager();

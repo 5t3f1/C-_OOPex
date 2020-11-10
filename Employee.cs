@@ -102,7 +102,7 @@ namespace employees
             }
         }
 
-        private int _salary;
+        private int _salary = 5;
         public int Salary
         {
             get
@@ -131,11 +131,11 @@ namespace employees
         {
             get
             {
-                return _workDays;
+                return _workHours;
             }
             set
             {
-                _workDays = value;
+                _workHours = value;
             }
         }
 
@@ -166,23 +166,17 @@ namespace employees
 
         }
 
-        public void SetWork()
+        public virtual void SetWork()
         {
             WorkHours = 8;
             WorkDays = 20;
             //salary = salary * workHours * workDays;
         }
-        public int GetSalary()
+        public virtual int GetSalary()
         {
-            /*try
-            {
-                Salary = Salary * WorkHours * WorkDays;
-            }
-            catch (Exception e)
-            {
-
-            }*/
-            return 0;
+            
+            Salary = Salary * WorkHours * WorkDays;
+            return Salary;
         }
     }
 

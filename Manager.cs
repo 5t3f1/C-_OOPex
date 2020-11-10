@@ -32,6 +32,21 @@ namespace employees
             }
         }
 
+        public override void SetWork()
+        {
+            WorkHours = 5;
+            WorkDays = 30;
+            //salary = salary * workHours * workDays;
+        }
+
+        public override int GetSalary()
+        {
+
+            Salary = Salary * WorkHours * WorkDays;
+            Salary = Salary + (Employees.Count * Salary / 100);
+            return Salary;
+        }
+
 
 
     }
