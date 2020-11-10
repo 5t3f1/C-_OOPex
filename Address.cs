@@ -1,25 +1,39 @@
 ﻿using System;
 
-namespace employee
+namespace employees
 {
     public class Address
     {
-        string country;
-        string city;
-        //string messageField;
-
-        public Address(string addCountry,
-            string addCity)
-        //string addMessageField)
+        private string _country;
+        public string Country
         {
-            country = addCountry;
-            city = addCity;
-            //messageField = addMessageField;
+            get
+            {
+                return _country;
+            }
+            set
+            {
+                _country = value;
+            }
         }
+        private string _city;
+        public string City
+        {
+            get
+            {
+                return _city;
+            }
+            set
+            {
+                _city = value;
+            }
+        }
+
+        //string messageField;
 
         public void Print()
         {
-            Console.WriteLine("The address is {0}, {1}", city, country);
+            Console.WriteLine("The address is {0}, {1}", City, Country);
         }
     }
 }

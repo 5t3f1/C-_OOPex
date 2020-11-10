@@ -17,8 +17,8 @@ namespace employees
 
         public void PrintEvent()
         {
-                Console.WriteLine("Event '{0}': started - {1}; ended - {1}",
-                name, start, end);
+            Console.WriteLine("Event '{0}': started - {1}; ended - {1}",
+            name, start, end);
         }
     }
 }

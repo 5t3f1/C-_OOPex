@@ -1,33 +1,27 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace employees
 {
-    class Admin : Employee
+    class Admin : Manager
     {
-        public Admin(string name,
-            string surname,
-            string lastName,
-            string birthDate,
-            string sex,
-            string egn,
-            string email,
-            int appointmentDate,
-            Address address) : base(name,
-            surname,
-            lastName,
-            birthDate,
-            sex,
-            egn,
-            email,
-            appointmentDate,
-            address)
-        { }
 
-        public Manager CreateManager()
+        public Manager CreateManager(Employee emp, List<Employee> empls)
         {
-            Address address = new Address("Bulgaria", "Sofia");
-            List<Employee> empls = new List<Employee>();
-            Manager m = new Manager(empls, "1234", "todor", "borsov", "mihailov", "5.7.1998", "male", "9807051221", "t.mih@gmail.com", 2016, address);
+
+            Manager m = new Manager();
+
+            m.Name = emp.Name;
+            m.Surname = emp.Surname;
+            m.LastName = emp.LastName;
+            m.BirthDate = emp.BirthDate;
+            m.Gender = emp.Gender;
+            m.Egn = emp.Egn;
+            m.Email = emp.Email;
+            m.AppointmentDate = emp.AppointmentDate;
+            m.City = emp.City;
+            m.Country = emp.Country;
+            m.Employees = empls;
 
             m.PrintManager();
             return m;

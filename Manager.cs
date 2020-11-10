@@ -1,34 +1,24 @@
 ﻿using System;
+using System.Collections.Generic;
+
 
 namespace employees
 {
     class Manager : Employee
     {
-        List<Employee> employees = new List<Employee>();
-        string pin; //restrictions
+        public List<Employee> Employees = new List<Employee>();
 
-        public Manager(List<Employee> mEmployees, string mPin,
-            string name,
-            string surname,
-            string lastName,
-            string birthDate,
-            string sex,
-            string egn,
-            string email,
-            int appointmentDate,
-            Address address) : base(name,
-            surname,
-            lastName,
-            birthDate,
-            sex,
-            egn,
-            email,
-            appointmentDate,
-            address)
+        private string _pin;
+        public string Pin //restrictions
         {
-
-            employees = mEmployees;
-            pin = mPin;
+            get
+            {
+                return _pin;
+            }
+            set
+            {
+                _pin = value;
+            }
         }
 
         public void PrintManager()
@@ -36,7 +26,7 @@ namespace employees
             Console.WriteLine("-Manager-");
             PrintEmpInfo();
             Console.WriteLine("Responsible for:");
-            foreach (Employee emp in employees)
+            foreach (Employee emp in Employees)
             {
                 emp.PrintEmpInfo();
             }

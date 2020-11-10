@@ -5,9 +5,9 @@ namespace employees
 {
     static class Events
     {
-        List<Event> events = new List<Event>();
+        static List<Event> events = new List<Event>();
 
-        public void AddEvent(Event e)
+        public static void AddEvent(Event e)
         {
             events.Add(e);
         }
